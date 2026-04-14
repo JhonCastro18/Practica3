@@ -17,6 +17,31 @@ int findEntry(Entry* dict, int size, int prefix, char c) {
     return -1;
 }
 
-void compressLZ78(const char* input){
-    cout << "Compresion LZ78 en proceso..." << endl;
+void compressLZ78(const char* input) {
+    Entry* dict = new Entry[1000];
+    int dictSize = 1;
+
+    int currentPrefix = 0;
+
+    cout << "Salida (indice, caracter):\n";
+
+    for (int i = 0; input[i] != '\0'; i++) {
+        char c = input[i];
+
+        int index = findEntry(dict, dictSize, currentPrefix, c);
+
+        if (index != -1) {
+            currentPrefix = index;
+        } else {
+            cout << "(" << currentPrefix << ", " << c << ")\n";
+
+            dict[dictSize].prefix = currentPrefix;
+            dict[dictSize].c = c;
+            dictSize++;
+
+            currentPrefix = 0;
+        }
+    }
+
+    delete[] dict;
 }
