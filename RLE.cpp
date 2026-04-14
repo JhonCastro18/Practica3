@@ -32,3 +32,17 @@ string rleCompressPtr(const char* input) {
     }
     return result;
 }
+string rleDecompress(const string& input){
+    string result = "";
+
+    for(int i = 0; i < input.length(); i += 2){
+        char c = input[i];
+        int count = input[i+1] - '0';
+
+        for(int j = 0; j < count; j++){
+            result += c;
+        }
+    }
+
+    return result;
+}

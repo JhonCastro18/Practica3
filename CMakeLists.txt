@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(Practica_3 main.cpp
+    RLE.h
+    RLE.cpp
 
 )
 
