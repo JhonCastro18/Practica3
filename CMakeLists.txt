@@ -11,6 +11,8 @@ add_executable(Practica_3 main.cpp
     rotacionbits.h
     rotacionbits.h
     rotacionbits.cpp
+    XOR.h
+    XOR.cpp
 
 )
 
