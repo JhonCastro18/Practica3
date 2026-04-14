@@ -34,10 +34,19 @@ string rleCompressPtr(const char* input) {
 }
 string rleDecompress(const string& input){
     string result = "";
+    int i = 0;
 
-    for(int i = 0; i < input.length(); i += 2){
+    while(i < input.length()){
+
         char c = input[i];
-        int count = input[i+1] - '0';
+        i++;
+
+        int count = 0;
+
+        while(i < input.length() && input[i] >= '0' && input[i] <= '9'){
+            count = count * 10 + (input[i] - '0');
+            i++;
+        }
 
         for(int j = 0; j < count; j++){
             result += c;

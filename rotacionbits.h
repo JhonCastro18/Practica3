@@ -1,0 +1,4 @@
+#ifndef ROTACIONBITS_H
+#define ROTACIONBITS_H
+
+#endif // ROTACIONBITS_H
